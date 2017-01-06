@@ -12,6 +12,12 @@
 		D93AC8A21E2047E200FA0BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A01E2047E200FA0BAF /* Main.storyboard */; };
 		D93AC8A41E2047E200FA0BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A31E2047E200FA0BAF /* Assets.xcassets */; };
 		D93AC8A71E2047E200FA0BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A51E2047E200FA0BAF /* LaunchScreen.storyboard */; };
+		D93AC8B51E20487200FA0BAF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC8B41E20487200FA0BAF /* Event.swift */; };
+		D93AC8B81E20493100FA0BAF /* MeetupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC8B71E20493100FA0BAF /* MeetupRouter.swift */; };
+		D93AC8BA1E20493D00FA0BAF /* MeetupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC8B91E20493D00FA0BAF /* MeetupAPI.swift */; };
+		D93AC8BD1E2049C300FA0BAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC8BC1E2049C300FA0BAF /* Constants.swift */; };
+		D93AC8C11E204B0B00FA0BAF /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC8BF1E204B0B00FA0BAF /* EventsTableViewCell.swift */; };
+		D93AC8C21E204B0B00FA0BAF /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8C01E204B0B00FA0BAF /* EventsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		D93AC8A31E2047E200FA0BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D93AC8A61E2047E200FA0BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D93AC8A81E2047E200FA0BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D93AC8B41E20487200FA0BAF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D93AC8B71E20493100FA0BAF /* MeetupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupRouter.swift; sourceTree = "<group>"; };
+		D93AC8B91E20493D00FA0BAF /* MeetupAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupAPI.swift; sourceTree = "<group>"; };
+		D93AC8BC1E2049C300FA0BAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D93AC8BF1E204B0B00FA0BAF /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		D93AC8C01E204B0B00FA0BAF /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,92 @@
 		D93AC89B1E2047E200FA0BAF /* AVMeetup */ = {
 			isa = PBXGroup;
 			children = (
-				D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */,
-				D93AC89E1E2047E200FA0BAF /* ViewController.swift */,
-				D93AC8A01E2047E200FA0BAF /* Main.storyboard */,
-				D93AC8A31E2047E200FA0BAF /* Assets.xcassets */,
-				D93AC8A51E2047E200FA0BAF /* LaunchScreen.storyboard */,
-				D93AC8A81E2047E200FA0BAF /* Info.plist */,
+				D93AC8AE1E2047F100FA0BAF /* Application */,
+				D93AC8BB1E2049B900FA0BAF /* Constants */,
+				D93AC8B31E20483C00FA0BAF /* Controllers */,
+				D93AC8B11E20481B00FA0BAF /* Model */,
+				D93AC8B61E20491F00FA0BAF /* Networking */,
+				D93AC8B21E20483300FA0BAF /* Views */,
+				D93AC8AF1E2047F900FA0BAF /* Storyboards */,
+				D93AC8B01E20480800FA0BAF /* Resources */,
 			);
 			path = AVMeetup;
+			sourceTree = "<group>";
+		};
+		D93AC8AE1E2047F100FA0BAF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		D93AC8AF1E2047F900FA0BAF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC8A01E2047E200FA0BAF /* Main.storyboard */,
+				D93AC8A51E2047E200FA0BAF /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D93AC8B01E20480800FA0BAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC8A31E2047E200FA0BAF /* Assets.xcassets */,
+				D93AC8A81E2047E200FA0BAF /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D93AC8B11E20481B00FA0BAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC8B41E20487200FA0BAF /* Event.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D93AC8B21E20483300FA0BAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC8BE1E204ADF00FA0BAF /* Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D93AC8B31E20483C00FA0BAF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC89E1E2047E200FA0BAF /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D93AC8B61E20491F00FA0BAF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC8B71E20493100FA0BAF /* MeetupRouter.swift */,
+				D93AC8B91E20493D00FA0BAF /* MeetupAPI.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		D93AC8BB1E2049B900FA0BAF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC8BC1E2049C300FA0BAF /* Constants.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		D93AC8BE1E204ADF00FA0BAF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D93AC8BF1E204B0B00FA0BAF /* EventsTableViewCell.swift */,
+				D93AC8C01E204B0B00FA0BAF /* EventsTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93AC8C21E204B0B00FA0BAF /* EventsTableViewCell.xib in Resources */,
 				D93AC8A71E2047E200FA0BAF /* LaunchScreen.storyboard in Resources */,
 				D93AC8A41E2047E200FA0BAF /* Assets.xcassets in Resources */,
 				D93AC8A21E2047E200FA0BAF /* Main.storyboard in Resources */,
@@ -138,7 +229,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93AC89F1E2047E200FA0BAF /* ViewController.swift in Sources */,
+				D93AC8C11E204B0B00FA0BAF /* EventsTableViewCell.swift in Sources */,
+				D93AC8B51E20487200FA0BAF /* Event.swift in Sources */,
+				D93AC8B81E20493100FA0BAF /* MeetupRouter.swift in Sources */,
+				D93AC8BA1E20493D00FA0BAF /* MeetupAPI.swift in Sources */,
 				D93AC89D1E2047E200FA0BAF /* AppDelegate.swift in Sources */,
+				D93AC8BD1E2049C300FA0BAF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
