@@ -23,7 +23,14 @@ class EventsTableViewCell: UITableViewCell {
     // rsvpCountLabel 
     // favoriteStateButton
     
-
+    @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var eventTimeLabel: UILabel!
+    @IBOutlet weak var venueLabel: UILabel!
+    @IBOutlet weak var rsvpCountLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
