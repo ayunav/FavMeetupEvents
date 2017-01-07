@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j67-Tp-as0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Events View Controller-->
+        <scene sceneID="oDd-aG-JXo">
+            <objects>
+                <viewController storyboardIdentifier="EventsTableViewController" id="j67-Tp-as0" customClass="EventsViewController" customModule="AVMeetup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rWe-Fc-sIb"/>
+                        <viewControllerLayoutGuide type="bottom" id="mNH-0n-1ts"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wBW-aN-ZEy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-Ih-Qcv">
+                                <rect key="frame" x="16" y="28" width="343" height="29"/>
+                                <segments>
+                                    <segment title="All Events"/>
+                                    <segment title="Favorites"/>
+                                </segments>
+                                <color key="tintColor" red="0.87843137250000003" green="0.22352941179999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="fetchEventsWithSender:" destination="j67-Tp-as0" eventType="valueChanged" id="JPk-vn-QXH"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-Kj-zPh">
+                                <rect key="frame" x="16" y="64" width="359" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventsTableViewCellIdentifier" id="HJ9-pL-PyX" customClass="EventsTableViewCell" customModule="AVMeetup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HJ9-pL-PyX" id="59s-IH-CZJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cT6-Ih-Qcv" firstAttribute="top" secondItem="rWe-Fc-sIb" secondAttribute="bottom" constant="8" symbolic="YES" id="FSu-gq-JKl"/>
+                            <constraint firstAttribute="trailing" secondItem="Frr-Kj-zPh" secondAttribute="trailing" id="Hz5-GH-wXs"/>
+                            <constraint firstItem="cT6-Ih-Qcv" firstAttribute="trailing" secondItem="wBW-aN-ZEy" secondAttribute="trailingMargin" id="MPO-95-bcx"/>
+                            <constraint firstItem="cT6-Ih-Qcv" firstAttribute="leading" secondItem="wBW-aN-ZEy" secondAttribute="leadingMargin" id="Zia-bx-bjZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Frr-Kj-zPh" secondAttribute="bottom" constant="20" symbolic="YES" id="cOj-0t-AAB"/>
+                            <constraint firstItem="Frr-Kj-zPh" firstAttribute="top" secondItem="cT6-Ih-Qcv" secondAttribute="bottom" constant="8" symbolic="YES" id="w2s-jq-asD"/>
+                            <constraint firstItem="Frr-Kj-zPh" firstAttribute="leading" secondItem="cT6-Ih-Qcv" secondAttribute="leading" id="xS3-oe-dQA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zzC-FF-RYb"/>
+                    <connections>
+                        <outlet property="eventsTableView" destination="Frr-Kj-zPh" id="b5y-Fq-wgs"/>
+                        <outlet property="segmentedControl" destination="cT6-Ih-Qcv" id="EfI-5N-Uwk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPY-Uz-zvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="-174"/>
+        </scene>
+    </scenes>
 </document>
