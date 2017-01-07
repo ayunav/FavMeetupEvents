@@ -97,6 +97,14 @@
                     <constraint firstItem="b5i-Xu-9rz" firstAttribute="leading" secondItem="smA-6d-QgR" secondAttribute="trailing" constant="8" id="viD-zI-nxI"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="eventDateLabel" destination="smA-6d-QgR" id="Bvo-p4-gGf"/>
+                <outlet property="eventTimeLabel" destination="Wb4-h0-PSa" id="Hbf-IV-w37"/>
+                <outlet property="eventTitleLabel" destination="CQk-VT-EDS" id="ZUs-GZ-NE6"/>
+                <outlet property="groupNameLabel" destination="JjF-83-fWn" id="ffq-Xu-ffK"/>
+                <outlet property="rsvpCountLabel" destination="0jv-nP-cMM" id="uou-se-vg0"/>
+                <outlet property="venueLabel" destination="b5i-Xu-9rz" id="X9R-ns-RuM"/>
+            </connections>
             <point key="canvasLocation" x="27.5" y="-16.5"/>
         </tableViewCell>
     </objects>
