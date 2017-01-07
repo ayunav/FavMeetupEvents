@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D93AC89D1E2047E200FA0BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */; };
-		D93AC89F1E2047E200FA0BAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC89E1E2047E200FA0BAF /* ViewController.swift */; };
 		D93AC8A21E2047E200FA0BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A01E2047E200FA0BAF /* Main.storyboard */; };
 		D93AC8A41E2047E200FA0BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A31E2047E200FA0BAF /* Assets.xcassets */; };
 		D93AC8A71E2047E200FA0BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A51E2047E200FA0BAF /* LaunchScreen.storyboard */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		D93AC8991E2047E200FA0BAF /* AVMeetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVMeetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D93AC89E1E2047E200FA0BAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D93AC8A11E2047E200FA0BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D93AC8A31E2047E200FA0BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D93AC8A61E2047E200FA0BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		D93AC8B31E20483C00FA0BAF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D93AC89E1E2047E200FA0BAF /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D93AC89F1E2047E200FA0BAF /* ViewController.swift in Sources */,
 				D93AC8C11E204B0B00FA0BAF /* EventsTableViewCell.swift in Sources */,
 				D93AC8B51E20487200FA0BAF /* Event.swift in Sources */,
 				D93AC8B81E20493100FA0BAF /* MeetupRouter.swift in Sources */,
@@ -396,6 +392,7 @@
 				D93AC8AD1E2047E200FA0BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
