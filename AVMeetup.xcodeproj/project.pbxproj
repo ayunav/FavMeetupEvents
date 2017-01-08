@@ -136,8 +136,8 @@
 		D93AC8B61E20491F00FA0BAF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D93AC8B71E20493100FA0BAF /* MeetupRouter.swift */,
 				D93AC8B91E20493D00FA0BAF /* MeetupAPI.swift */,
+				D93AC8B71E20493100FA0BAF /* MeetupRouter.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
