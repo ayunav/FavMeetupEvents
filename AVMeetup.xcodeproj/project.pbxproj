@@ -18,6 +18,7 @@
 		D93AC8C11E204B0B00FA0BAF /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC8BF1E204B0B00FA0BAF /* EventsTableViewCell.swift */; };
 		D93AC8C21E204B0B00FA0BAF /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8C01E204B0B00FA0BAF /* EventsTableViewCell.xib */; };
 		D95489F21E20BBBC00C2AFFF /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95489F11E20BBBC00C2AFFF /* EventsViewController.swift */; };
+		D95489FB1E22B41100C2AFFF /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95489FA1E22B41100C2AFFF /* ColorConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D93AC8BF1E204B0B00FA0BAF /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		D93AC8C01E204B0B00FA0BAF /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		D95489F11E20BBBC00C2AFFF /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		D95489FA1E22B41100C2AFFF /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +73,9 @@
 				D93AC8B31E20483C00FA0BAF /* Controllers */,
 				D93AC8B11E20481B00FA0BAF /* Model */,
 				D93AC8B61E20491F00FA0BAF /* Networking */,
-				D93AC8B21E20483300FA0BAF /* Views */,
-				D93AC8AF1E2047F900FA0BAF /* Storyboards */,
 				D93AC8B01E20480800FA0BAF /* Resources */,
+				D93AC8AF1E2047F900FA0BAF /* Storyboards */,
+				D93AC8B21E20483300FA0BAF /* Views */,
 			);
 			path = AVMeetup;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				D93AC8BC1E2049C300FA0BAF /* Constants.swift */,
+				D95489FA1E22B41100C2AFFF /* ColorConstants.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				D93AC8C11E204B0B00FA0BAF /* EventsTableViewCell.swift in Sources */,
 				D93AC8B51E20487200FA0BAF /* Event.swift in Sources */,
 				D93AC8B81E20493100FA0BAF /* MeetupRouter.swift in Sources */,
+				D95489FB1E22B41100C2AFFF /* ColorConstants.swift in Sources */,
 				D93AC8BA1E20493D00FA0BAF /* MeetupAPI.swift in Sources */,
 				D95489F21E20BBBC00C2AFFF /* EventsViewController.swift in Sources */,
 				D93AC89D1E2047E200FA0BAF /* AppDelegate.swift in Sources */,
