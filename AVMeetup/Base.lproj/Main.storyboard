@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j67-Tp-as0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VWd-JD-zS7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,19 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-Ih-Qcv">
-                                <rect key="frame" x="16" y="28" width="343" height="29"/>
-                                <segments>
-                                    <segment title="All Events"/>
-                                    <segment title="Favorites"/>
-                                </segments>
-                                <color key="tintColor" red="0.87843137250000003" green="0.22352941179999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="fetchEventsWithSender:" destination="j67-Tp-as0" eventType="valueChanged" id="JPk-vn-QXH"/>
-                                </connections>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-Kj-zPh">
-                                <rect key="frame" x="16" y="64" width="359" height="583"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-Kj-zPh">
+                                <rect key="frame" x="16" y="92" width="359" height="555"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventsTableViewCellIdentifier" id="HJ9-pL-PyX" customClass="EventsTableViewCell" customModule="AVMeetup" customModuleProvider="target">
@@ -47,15 +36,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-Ih-Qcv">
+                                <rect key="frame" x="16" y="64" width="343" height="29"/>
+                                <segments>
+                                    <segment title="All Events"/>
+                                    <segment title="Favorites"/>
+                                </segments>
+                                <color key="tintColor" red="0.87843137250000003" green="0.22352941179999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="fetchEventsWithSender:" destination="j67-Tp-as0" eventType="valueChanged" id="JPk-vn-QXH"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cT6-Ih-Qcv" firstAttribute="top" secondItem="rWe-Fc-sIb" secondAttribute="bottom" constant="8" symbolic="YES" id="FSu-gq-JKl"/>
+                            <constraint firstItem="Frr-Kj-zPh" firstAttribute="top" secondItem="cT6-Ih-Qcv" secondAttribute="bottom" id="DGd-52-guR"/>
                             <constraint firstAttribute="trailing" secondItem="Frr-Kj-zPh" secondAttribute="trailing" id="Hz5-GH-wXs"/>
                             <constraint firstItem="cT6-Ih-Qcv" firstAttribute="trailing" secondItem="wBW-aN-ZEy" secondAttribute="trailingMargin" id="MPO-95-bcx"/>
                             <constraint firstItem="cT6-Ih-Qcv" firstAttribute="leading" secondItem="wBW-aN-ZEy" secondAttribute="leadingMargin" id="Zia-bx-bjZ"/>
                             <constraint firstAttribute="bottom" secondItem="Frr-Kj-zPh" secondAttribute="bottom" constant="20" symbolic="YES" id="cOj-0t-AAB"/>
-                            <constraint firstItem="Frr-Kj-zPh" firstAttribute="top" secondItem="cT6-Ih-Qcv" secondAttribute="bottom" constant="8" symbolic="YES" id="w2s-jq-asD"/>
+                            <constraint firstItem="cT6-Ih-Qcv" firstAttribute="top" secondItem="rWe-Fc-sIb" secondAttribute="bottom" id="hhm-nq-ZiV"/>
                             <constraint firstItem="Frr-Kj-zPh" firstAttribute="leading" secondItem="cT6-Ih-Qcv" secondAttribute="leading" id="xS3-oe-dQA"/>
                         </constraints>
                     </view>
@@ -67,7 +67,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPY-Uz-zvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="-174"/>
+            <point key="canvasLocation" x="1496.8" y="-174.06296851574214"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FjB-fG-MRg">
+            <objects>
+                <navigationController id="VWd-JD-zS7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gly-7C-hYU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j67-Tp-as0" kind="relationship" relationship="rootViewController" id="gsw-uD-uvY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BoD-Kc-VXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718" y="-174"/>
         </scene>
     </scenes>
 </document>
