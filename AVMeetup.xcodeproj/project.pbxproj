@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D15128F00E9BE678482E6B49 /* Pods_AVMeetup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42147AC11A844EF9725C5307 /* Pods_AVMeetup.framework */; };
 		D93AC89D1E2047E200FA0BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */; };
 		D93AC8A21E2047E200FA0BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A01E2047E200FA0BAF /* Main.storyboard */; };
 		D93AC8A41E2047E200FA0BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A31E2047E200FA0BAF /* Assets.xcassets */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42147AC11A844EF9725C5307 /* Pods_AVMeetup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVMeetup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7653C5DC8F2F59E964DC68F5 /* Pods-AVMeetup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVMeetup.release.xcconfig"; path = "Pods/Target Support Files/Pods-AVMeetup/Pods-AVMeetup.release.xcconfig"; sourceTree = "<group>"; };
 		D93AC8991E2047E200FA0BAF /* AVMeetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVMeetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D93AC8A11E2047E200FA0BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		D95489F11E20BBBC00C2AFFF /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		D95489FA1E22B41100C2AFFF /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		D95489FD1E22B61F00C2AFFF /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		E5828089B157D3FD0D2C354A /* Pods-AVMeetup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVMeetup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AVMeetup/Pods-AVMeetup.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D15128F00E9BE678482E6B49 /* Pods_AVMeetup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54A4C342449D559B7702F85B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5828089B157D3FD0D2C354A /* Pods-AVMeetup.debug.xcconfig */,
+				7653C5DC8F2F59E964DC68F5 /* Pods-AVMeetup.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		64F1E10F2CFE45BA3D538469 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42147AC11A844EF9725C5307 /* Pods_AVMeetup.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D93AC8901E2047E200FA0BAF = {
 			isa = PBXGroup;
 			children = (
 				D93AC89B1E2047E200FA0BAF /* AVMeetup */,
 				D93AC89A1E2047E200FA0BAF /* Products */,
+				54A4C342449D559B7702F85B /* Pods */,
+				64F1E10F2CFE45BA3D538469 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D93AC8AB1E2047E200FA0BAF /* Build configuration list for PBXNativeTarget "AVMeetup" */;
 			buildPhases = (
+				6014B87CF82873E3E351CE36 /* [CP] Check Pods Manifest.lock */,
 				D93AC8951E2047E200FA0BAF /* Sources */,
 				D93AC8961E2047E200FA0BAF /* Frameworks */,
 				D93AC8971E2047E200FA0BAF /* Resources */,
+				90216C5A7AD809A5EB70F733 /* [CP] Embed Pods Frameworks */,
+				86F598387AC2BD7FA99562AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,6 +263,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6014B87CF82873E3E351CE36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		86F598387AC2BD7FA99562AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AVMeetup/Pods-AVMeetup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90216C5A7AD809A5EB70F733 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AVMeetup/Pods-AVMeetup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D93AC8951E2047E200FA0BAF /* Sources */ = {
@@ -369,6 +444,7 @@
 		};
 		D93AC8AC1E2047E200FA0BAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5828089B157D3FD0D2C354A /* Pods-AVMeetup.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N48NM3R37Q;
@@ -382,6 +458,7 @@
 		};
 		D93AC8AD1E2047E200FA0BAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7653C5DC8F2F59E964DC68F5 /* Pods-AVMeetup.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N48NM3R37Q;
