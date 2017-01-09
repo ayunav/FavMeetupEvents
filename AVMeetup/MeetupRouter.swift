@@ -46,8 +46,8 @@ struct MeetupRouter
             "sign" : QueryItem.sign.rawValue,
             "page" : QueryItem.page.rawValue, 
             "zip"  : "11106",
-            "city": "New York",
-            "topic" : "ios"
+            "city" : "New York",
+            "topic": "ios"
         ]
         
         for (key, value) in baseParams {

@@ -61,5 +61,4 @@ class Event
         
         return Event(date: eventDate, eventId: eventId, group: groupName, name: name, rsvp: rsvp, time: eventTime, venue: venue)
     }
-    
 }
