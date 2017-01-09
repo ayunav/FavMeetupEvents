@@ -35,9 +35,35 @@ struct MeetupRouter
     
     //  http://www.meetup.com/meetup_api/docs/2/open_events/)
 
-    private mutating func openEventsURL(parameters: [String: String]?) -> URL {
-        
+    mutating func openEventsURL() -> URL {
+
         urlComponents.path = "/2/open_events"
+        
+        var queryItems = [URLQueryItem]()
+        
+        let baseParams = [
+            "key"  : MeetupApiKey,
+            "sign" : QueryItem.sign.rawValue,
+            "page" : QueryItem.page.rawValue, 
+            "zip"  : "11106",
+            "city": "New York",
+            "topic" : "ios"
+        ]
+        
+        for (key, value) in baseParams {
+            let queryItem = URLQueryItem(name: key, value: value)
+            queryItems.append(queryItem)
+        }
+        
+        urlComponents.queryItems = queryItems
+        
+        return urlComponents.url!
+    }
+    
+    
+    
+    private mutating func eventsURL(parameters: [String: String]?) -> URL {
+        
         
         var queryItems = [URLQueryItem]()
         
