@@ -10,45 +10,56 @@ import UIKit
 
 enum EventFields: String
 {
-    case Title = "name"
-    case EventId = "id"
-    case Date = "time"
-    case Group = "group"
-    case GroupUrlName = "urlname"
-    case Venue = "venue"
+    case eventId      = "id"
+    case group        = "group"
+    case groupUrlName = "urlname"
+    case name         = "name"
+    case rsvpCount    = "yes_rsvp_count"
+    case time         = "time"
+    case venue        = "venue"
 }
 
 
 class Event
 {
-    let date: Int
-    let eventId: String
-    let group: String
-    //    let time: String
-    let title: String
-    let venue: String
+    let date     : String
+    let eventId  : String
+    let group    : String
+    let name     : String
+    let rsvp     : String
+    let time     : String
+    let venue    : String
     
-    init(title: String, date: Int, group: String, eventId: String, venue: String)
+    init(date: String, eventId: String, group: String, name: String, rsvp: String, time: String, venue: String)
     {
-        self.title = title
-        self.date = date
-        self.group = group
-        self.eventId = eventId
-        self.venue = venue
+        self.date      = date
+        self.eventId   = eventId
+        self.group     = group
+        self.name      = name
+        self.rsvp      = rsvp
+        self.time      = time
+        self.venue     = venue
     }
+    
+    
+    private static let dateFormatter = DateFormatter()
     
     
     static func eventFromJsonDict(json: [String: AnyObject]) -> Event?
     {
-        guard let title = json[EventFields.Title.rawValue] as? String,
-            let date = json[EventFields.Date.rawValue] as? Int,
-            let eventId = json[EventFields.EventId.rawValue] as? String,
-            let group = json[EventFields.Group.rawValue] as? [String: AnyObject],
-            let groupName = group[EventFields.GroupUrlName.rawValue] as? String,
-            let venue = json[EventFields.Venue.rawValue]?[EventFields.Title.rawValue] as? String else { return nil }
+        guard let time    = json[EventFields.time.rawValue]      as? Int,
+            let rsvpCount = json[EventFields.rsvpCount.rawValue] as? Int,
+            let name      = json[EventFields.name.rawValue]      as? String,
+            let eventId   = json[EventFields.eventId.rawValue]   as? String,
+            let groupName = json[EventFields.group.rawValue]?[EventFields.groupUrlName.rawValue] as? String,
+            let venue     = json[EventFields.venue.rawValue]?[EventFields.name.rawValue]         as? String
+            else { return nil }
         
-        return Event(title: title, date: date, group: groupName, eventId: eventId, venue: venue)
+        let (eventDate, eventTime) = dateFormatter.dateAndTimeFrom(time: time)
+        
+        let rsvp = "\(rsvpCount) people are going"
+        
+        return Event(date: eventDate, eventId: eventId, group: groupName, name: name, rsvp: rsvp, time: eventTime, venue: venue)
     }
-    
     
 }
