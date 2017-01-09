@@ -10,17 +10,8 @@ import UIKit
 
 class EventsTableViewCell: UITableViewCell {
     
-    /*
-     The event name
-     The Meetup Group name
-     The event date and time
-     How many people have RSVP’d yes so far
-     */
+//     How many people have RSVP’d yes so far
     
-    // eventNameLabel
-    // groupNameLabel
-    // eventDateAndTimeLabel
-    // rsvpCountLabel 
     // favoriteStateButton
     
     @IBOutlet weak var eventDateLabel: UILabel!
@@ -33,13 +24,6 @@ class EventsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
