@@ -16,7 +16,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private let CellIdentifier = "EventsTableViewCellIdentifier"
     
     var events: [Event] = []
-    
+    var meetupAPI = MeetupAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -45,7 +44,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         switch sender.selectedSegmentIndex {
         case 0:
-            //getUpcomingEvents()
+            getEvents()
             print("all events selected")
         case 1:
 //            getPastEvents()
@@ -56,7 +55,27 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    func getEvents() {
+        
+        meetupAPI.getEvents() { (eventsResult) -> Void in
+            
+            OperationQueue.main.addOperation {
+                switch eventsResult {
+                case let .success(_events):
+                    self.events = _events
+                    self.eventsTableView.reloadData()
+                case let .failure(error):
+                    print("Error fetching meetup events: \(error)")
+                    // TODO: create user facing alert
+                }
+            }
+        }
+    }
     
+    
+    func displayFavoriteEvents() {
+        print("Running function to display favorite events that doesn't do anything right now")
+    }
     
     // MARK: - Table view data source
     
@@ -73,18 +92,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath) as! EventsTableViewCell
         
         let event = events[indexPath.row]
-
-//        cell.eventDateLabel.text = "JAN 07 07"
-//        cell.groupNameLabel.text = "favorite events selected"
-//        cell.eventTitleLabel.text = "favorite events selected"
-//        cell.eventTimeLabel.text = "favorite events selected"
-//        cell.venueLabel.text = "favorite events selected"
         
-        cell.eventDateLabel.text = String(event.date)
+        cell.eventDateLabel.text = event.date
+        cell.eventTitleLabel.text = event.name
+        cell.eventTimeLabel.text = event.time
         cell.groupNameLabel.text = event.group
-        cell.eventTitleLabel.text = event.title
-        cell.eventTimeLabel.text = String(event.date)
         cell.venueLabel.text = event.venue
+        cell.rsvpCountLabel.text = event.rsvp
         
         return cell
     }
