@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tDm-w9-Juw" id="b24-Lj-w6U">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="170.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Group Name Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjF-83-fWn" userLabel="Group Name Label">
@@ -25,14 +25,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBP-8V-WSa" userLabel="Heart Button">
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBP-8V-WSa" userLabel="Like Button">
                         <rect key="frame" x="321" y="8" width="46" height="147"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="46" id="lbe-pl-PVC"/>
                         </constraints>
-                        <state key="normal" title="Like">
-                            <color key="titleColor" red="0.87843137250000003" green="0.22352941179999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
+                        <connections>
+                            <action selector="likeButtonTapped:" destination="tDm-w9-Juw" eventType="touchUpInside" id="RNO-Re-rlg"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Event Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-VT-EDS" userLabel="Event Title Label">
                         <rect key="frame" x="50" y="45" width="263" height="23"/>
@@ -104,6 +104,7 @@
                 <outlet property="eventTimeLabel" destination="Wb4-h0-PSa" id="Hbf-IV-w37"/>
                 <outlet property="eventTitleLabel" destination="CQk-VT-EDS" id="ZUs-GZ-NE6"/>
                 <outlet property="groupNameLabel" destination="JjF-83-fWn" id="ffq-Xu-ffK"/>
+                <outlet property="likeButton" destination="SBP-8V-WSa" id="nzU-RZ-AfZ"/>
                 <outlet property="rsvpCountLabel" destination="0jv-nP-cMM" id="uou-se-vg0"/>
                 <outlet property="venueLabel" destination="b5i-Xu-9rz" id="X9R-ns-RuM"/>
             </connections>

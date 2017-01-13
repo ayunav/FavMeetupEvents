@@ -9,11 +9,7 @@
 import UIKit
 
 class EventsTableViewCell: UITableViewCell {
-    
-//     How many people have RSVP’d yes so far
-    
-    // favoriteStateButton
-    
+        
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var eventTitleLabel: UILabel!
@@ -21,9 +17,18 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet weak var venueLabel: UILabel!
     @IBOutlet weak var rsvpCountLabel: UILabel!
     
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        likeButton.setImage(UIImage(named: "LikeButton"), for: .normal)
     }
 
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        
+        likeButton.setImage(UIImage(named: "LikeButtonActive"), for: .selected)
+    }
+    
+    
 }
