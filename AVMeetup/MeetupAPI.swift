@@ -20,6 +20,7 @@ struct MeetupAPI {
     
     var meetupRouter = MeetupRouter()
     
+    // mutating ?
      
     mutating func getEvents(completion: @escaping (EventsResult) -> Void) {
         

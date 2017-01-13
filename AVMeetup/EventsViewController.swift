@@ -10,6 +10,9 @@ import UIKit
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    // MARK: - Properties 
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var eventsTableView: UITableView!
 
@@ -17,6 +20,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var events: [Event] = []
     var meetupAPI = MeetupAPI()
+    
+    
+    
+    // MARK: - View
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +46,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
     }
     
+    
+    // MARK: - UISegmentedControl methods
+    
 
     @IBAction func fetchEvents(sender: UISegmentedControl)
     {
@@ -47,8 +57,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             getEvents()
             print("all events selected")
         case 1:
-//            getPastEvents()
-            print("favorite events selected")
+            displayFavoriteEvents()
       default:
             break;
         }
@@ -77,11 +86,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("Running function to display favorite events that doesn't do anything right now")
     }
     
+    
     // MARK: - Table view data source
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
