@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D15128F00E9BE678482E6B49 /* Pods_AVMeetup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42147AC11A844EF9725C5307 /* Pods_AVMeetup.framework */; };
+		D92ADA5F1E2AFFB900107075 /* EventsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92ADA5E1E2AFFB900107075 /* EventsStore.swift */; };
 		D93AC89D1E2047E200FA0BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */; };
 		D93AC8A21E2047E200FA0BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A01E2047E200FA0BAF /* Main.storyboard */; };
 		D93AC8A41E2047E200FA0BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8A31E2047E200FA0BAF /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		42147AC11A844EF9725C5307 /* Pods_AVMeetup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVMeetup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7653C5DC8F2F59E964DC68F5 /* Pods-AVMeetup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVMeetup.release.xcconfig"; path = "Pods/Target Support Files/Pods-AVMeetup/Pods-AVMeetup.release.xcconfig"; sourceTree = "<group>"; };
+		D92ADA5E1E2AFFB900107075 /* EventsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsStore.swift; sourceTree = "<group>"; };
 		D93AC8991E2047E200FA0BAF /* AVMeetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVMeetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93AC89C1E2047E200FA0BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D93AC8A11E2047E200FA0BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D93AC8B41E20487200FA0BAF /* Event.swift */,
+				D92ADA5E1E2AFFB900107075 /* EventsStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,7 +280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		86F598387AC2BD7FA99562AD /* [CP] Copy Pods Resources */ = {
@@ -321,6 +324,7 @@
 				D93AC8C11E204B0B00FA0BAF /* EventsTableViewCell.swift in Sources */,
 				D93AC8B51E20487200FA0BAF /* Event.swift in Sources */,
 				D93AC8B81E20493100FA0BAF /* MeetupRouter.swift in Sources */,
+				D92ADA5F1E2AFFB900107075 /* EventsStore.swift in Sources */,
 				D95489FB1E22B41100C2AFFF /* ColorConstants.swift in Sources */,
 				D93AC8BA1E20493D00FA0BAF /* MeetupAPI.swift in Sources */,
 				D95489F21E20BBBC00C2AFFF /* EventsViewController.swift in Sources */,
