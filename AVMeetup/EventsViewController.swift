@@ -54,7 +54,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch sender.selectedSegmentIndex {
         case 0:
             getEvents()
-            print("all events selected")
+            print("GETTING EVENTS ON SEGM CONTROL")
         case 1:
             displayFavoriteEvents()
       default:

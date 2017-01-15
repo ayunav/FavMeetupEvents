@@ -30,27 +30,49 @@ class Event
     let time     : String
     let venue    : String
     
+    
+    //var isLiked  : Bool?
+
     var isLiked  : Bool = false {
         didSet {
             
+//            EventsStore.sharedInstance.store(favState: isLiked)
+            
+            
+            // get userDefaults favEventsIDs
+            // check is eventId is in the arr 
+            // if not, add to the arr, 
+            // if it is, remove from the arr
+            // update favEventsArr
+            // synchronize
             
             var favoritedEvents = UserDefaults.standard.array(forKey: "favoritedEvents")! // guard?
             
             if (isLiked) {
-                let isInArray = favoritedEvents.contains { $0 as! String == eventId }
+                // if event was liked aka heart button was pressed, 
+                // check is the eventId is in the fav events IDs array
                 
-                // add to array if it's not already there
-                if isInArray == false {
+                let wasFavoritedBool = favoritedEvents.contains { $0 as! String == eventId }
+                
+                // if the eventId is not in the fav Events IDs array, add eventId to the arr
+                if wasFavoritedBool == false {
                     favoritedEvents.append(eventId)
-                    
-                    
                 }
-            } else {
-                // remove from array if it's there
-                UserDefaults.standard.removeObject(forKey: eventId)
+                // if the event is already in the array of fav events IDs, 
+                // remove the eventID from the array
+//                else {
+//                    let updatedFavEvents = favoritedEvents.filter( { $0 as! String != eventId })
+//                    favoritedEvents = updatedFavEvents
+//                    UserDefaults.standard.set(favoritedEvents, forKey:"favoritedEvents")
+//                }
+                UserDefaults.standard.set(favoritedEvents, forKey:"favoritedEvents")
             }
-            
-            UserDefaults.standard.set(favoritedEvents, forKey:"favoritedEvents")
+            // if the event was unliked
+            else {
+                // remove eventId from the fav events IDs array
+                let updatedFavEvents = favoritedEvents.filter( { $0 as! String != eventId })
+                UserDefaults.standard.set(updatedFavEvents, forKey:"favoritedEvents")
+            }
             UserDefaults.standard.synchronize()
         }
     }
@@ -66,6 +88,14 @@ class Event
         self.time      = time
         self.venue     = venue
 
+        // if we have favEventsArr 
+        // and if the eventId is in the arr, set isLiked property to true 
+        // if no favEventsArr doesn't exist 
+        // set new arr for key favEvents
+        // set isLiked property to false
+        
+        //self.isLiked = EventsStore.sharedInstance.isLiked()
+        
         if UserDefaults.standard.object(forKey: "favoritedEvents") != nil {
             self.isLiked = UserDefaults.standard.array(forKey: "favoritedEvents")!.contains { $0 as! String == eventId }
         } else {

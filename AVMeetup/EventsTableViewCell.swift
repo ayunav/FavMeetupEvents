@@ -36,6 +36,13 @@ class EventsTableViewCell: UITableViewCell {
         sender.isSelected = !sender.isSelected
         event.isLiked = sender.isSelected
 
+        // add event to favEvents array, or remove
+        // set isLiked to true or false
+
+        
+        
+        //EventsStore.sharedInstance.store(favState: event.isLiked, for: event)
+        
         // set event property for isLiked
         // persist isLiked value
     
