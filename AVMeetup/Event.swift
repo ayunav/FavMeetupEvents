@@ -30,6 +30,32 @@ class Event
     let time     : String
     let venue    : String
     
+    var isLiked  : Bool = false {
+        didSet {
+            
+            
+            var favoritedEvents = UserDefaults.standard.array(forKey: "favoritedEvents")! // guard?
+            
+            if (isLiked) {
+                let isInArray = favoritedEvents.contains { $0 as! String == eventId }
+                
+                // add to array if it's not already there
+                if isInArray == false {
+                    favoritedEvents.append(eventId)
+                    
+                    
+                }
+            } else {
+                // remove from array if it's there
+                UserDefaults.standard.removeObject(forKey: eventId)
+            }
+            
+            UserDefaults.standard.set(favoritedEvents, forKey:"favoritedEvents")
+            UserDefaults.standard.synchronize()
+        }
+    }
+
+    
     init(date: String, eventId: String, group: String, name: String, rsvp: String, time: String, venue: String)
     {
         self.date      = date
@@ -39,6 +65,13 @@ class Event
         self.rsvp      = rsvp
         self.time      = time
         self.venue     = venue
+
+        if UserDefaults.standard.object(forKey: "favoritedEvents") != nil {
+            self.isLiked = UserDefaults.standard.array(forKey: "favoritedEvents")!.contains { $0 as! String == eventId }
+        } else {
+            UserDefaults.standard.set(NSArray(), forKey:"favoritedEvents")
+            self.isLiked = false
+        }
     }
     
     

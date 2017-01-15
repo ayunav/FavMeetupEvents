@@ -20,8 +20,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var events: [Event] = []
     var meetupAPI = MeetupAPI()
-    
-    
+
     
     // MARK: - View
     
@@ -103,26 +102,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath) as! EventsTableViewCell
         
-        let event = events[indexPath.row]
+        cell.event = events[indexPath.row]
         
-        cell.eventDateLabel.text = event.date
-        cell.eventTitleLabel.text = event.name
-        cell.eventTimeLabel.text = event.time
-        cell.groupNameLabel.text = event.group
-        cell.venueLabel.text = event.venue
-        cell.rsvpCountLabel.text = event.rsvp
-        
+        cell.setup()
+
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
 }
