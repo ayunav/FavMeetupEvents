@@ -9,8 +9,8 @@
 import UIKit
 
 
-enum QueryItem: String
-{
+enum QueryItem: String {
+    
     case page = "10"
     case sign = "true"
 //    case status = "upcoming"
@@ -18,8 +18,8 @@ enum QueryItem: String
 }
 
 
-struct MeetupRouter
-{
+struct MeetupRouter {
+    
     // MARK: - URL Components
     
     var urlComponents = URLComponents()
