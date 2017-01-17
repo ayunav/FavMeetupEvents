@@ -54,7 +54,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch sender.selectedSegmentIndex {
         case 0:
             getEvents()
-            print("GETTING EVENTS ON SEGM CONTROL")
         case 1:
             displayFavoriteEvents()
       default:
@@ -67,7 +66,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         meetupAPI.getEvents() { (eventsResult) -> Void in
             
-            OperationQueue.main.addOperation {
+            DispatchQueue.main.async {
                 switch eventsResult {
                 case let .success(_events):
                     self.events = _events
@@ -82,7 +81,12 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func displayFavoriteEvents() {
-        print("Running function to display favorite events that doesn't do anything right now")
+        
+        self.events = EventsStore.sharedInstance.getFavoriteEvents()
+
+        DispatchQueue.main.async {
+            self.eventsTableView.reloadData()
+        }
     }
     
     
@@ -108,8 +112,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         return cell
     }
-    
-    
     
     
 }
