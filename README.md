@@ -67,6 +67,6 @@ but I would agree with Mattt Thompson, NSHipster contributor: "As developers, it
 
 #### Screenshots 
 
-![All Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/All_Events_Screenshot%20copy.png)
+![All Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/All_Events_Screenshot.png)
 
-![Fav Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/Favorite_Events_Screenshot%20copy%202.png)
+![Favorite Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/Favorite_Events_Screenshot.png)
