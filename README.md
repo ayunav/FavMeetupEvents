@@ -60,3 +60,13 @@ but I would agree with Mattt Thompson, NSHipster contributor: "As developers, it
 - [UserDefaults and complex objects](https://www.codementor.io/brettr/tutorials/persisting-data-with-nsuserdefaults-and-complex-objects-du107m6ja)
 - [UserDefaultsManager example](https://github.com/imk2o/UICatalog/blob/f040bd07a7de4a4b8df784c0c4444436b04ed813/UICatalog/Misc/UserDefaultsManager.swift)
 - [Private IBOutlets](https://www.natashatherobot.com/swift-iboutlets-private/)
+
+## Demo 
+
+![Demo](https://github.com/ayunav/AVMeetup/blob/master/AVMeetupAppDemo.gif)
+
+#### Screenshots 
+
+![All Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/All_Events_Screenshot%20copy.png)
+
+![Fav Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/Favorite_Events_Screenshot%20copy%202.png)
