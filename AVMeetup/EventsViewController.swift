@@ -72,11 +72,12 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             DispatchQueue.main.async {
                 switch eventsResult {
                 case let .success(_events):
+                    
                     self.events = _events
                     self.eventsTableView.reloadData()
+                    
                 case let .failure(error):
                     print("Error fetching meetup events: \(error)")
-                    // TODO: create user facing alert
                 }
             }
         }

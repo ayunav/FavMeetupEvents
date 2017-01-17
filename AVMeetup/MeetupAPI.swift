@@ -36,7 +36,7 @@ struct MeetupAPI {
             if events.count > 0 {
                 completion(EventsResult.success(events))
             } else {
-                completion(EventsResult.failure(response.result.error!)) // fix later
+                completion(EventsResult.failure(response.result.error!)) 
                 debugPrint(response.result.error?.localizedDescription as Any)
             }
         })

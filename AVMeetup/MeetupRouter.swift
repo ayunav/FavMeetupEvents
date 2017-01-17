@@ -13,8 +13,6 @@ enum QueryItem: String {
     
     case page = "10"
     case sign = "true"
-//    case status = "upcoming"
-//    case scroll = "recent_past"
 }
 
 
@@ -33,7 +31,7 @@ struct MeetupRouter {
     
     // MARK: - Events URL
     
-    //  http://www.meetup.com/meetup_api/docs/2/open_events/)
+    // http://www.meetup.com/meetup_api/docs/2/open_events/
 
     mutating func openEventsURL() -> URL {
 
@@ -45,7 +43,7 @@ struct MeetupRouter {
             "key"  : MeetupApiKey,
             "sign" : QueryItem.sign.rawValue,
             "page" : QueryItem.page.rawValue, 
-            "zip"  : "11106",
+            "zip"  : "10012",
             "city" : "New York",
             "topic": "ios"
         ]
