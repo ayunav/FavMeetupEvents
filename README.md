@@ -2,29 +2,36 @@
 
 ## How to run 
 
-Add file - insert your api key here 
+1. Download the source file 
+2. Open AVMeetup.xcworkspace project 
+3. Build and run 
 
-Meetup api key - should not be visible 
+Normally, the API keys should not be exposed. I usually have the Constants file in the .gitignore, but I readded it, so you won't have to do it manually. 
 
+## Architecture & Features 
 
-## Architecture 
+### User Stories 
 
-MVC design pattern
-tableview is not in a datasource 
+- A user should be able to see the list of upcoming iOS events in New York City. The networking request is hardcoded for now. 
 
-Networking: Alamofire 
-Data persistence (favorite events): nscoding, archiving and user defaults . EventsStore class to manage that saving it as a dictionary where key is event id and the value is the event object. 
+- A user should be able to tap the heart button on any event to save it to favorites. 
 
-EventsStore methods could be generic, but there isn't the complexity there not yet. 
+- A user should be able to see their saved events by tapping Favorites segment of the UISegmentedControl on top of the table view. 
 
-As developers, it is our responsibility to understand the goals and needs of our applications, and to resist the urge to over-engineer and prematurely optimize our solutions.
+- A user should be able to unlike an event which will remove it from the Favorites. 
 
-The decision to use Core Data in an application may appear to be a no-brainer, if not harmless. But in many cases, Core Data is discovered to be so unwieldy or unnecessary as to become a real hindrance to making something useful, let alone functional.
+### Architecture 
 
-And even if most applications would benefit from Core Data at some point, there is wisdom to letting complexity evolve from a simple as necessary. And as far as persistence goes, it doesn’t get much simpler than NSCoding.
+- MVC
+- Alamofire library to make networking requests code more succinct 
+- NSCoding/NSKeyedArchiver to persist data for favorite events. EventsStore class manages saving favorite Event objects as a dictionary to User Defaults, where a key is an eventID string, and a value is an Event object. 
 
+I was debating whether I should be "adding complexity" (to reduce complexity, as Mike Walker said at the last iOSoho meetup at Meetup) to this rather small app. Some features that could be more "complex" in order to accommodate the future app expansion:   
+- tableview's datasource could be its own class 
+- EventsStore methods could be generic
+- Core Data could be used to store favorite events 
 
-As developers, it is our responsibility to understand the goals and needs of our applications, and to resist the urge to over-engineer and prematurely optimize our solutions. And even if most applications would benefit from Core Data at some point, there is wisdom to letting complexity evolve from a simple as necessary. And as far as persistence goes, it doesn’t get much simpler than NSCoding. [http://nshipster.com/nscoding/](http://nshipster.com/nscoding/)
+but I would agree with Mattt Thompson, NSHipster contributor: "As developers, it is our responsibility to understand the goals and needs of our applications, and to resist the urge to over-engineer and prematurely optimize our solutions. Even if most applications would benefit from Core Data at some point, there is wisdom to letting complexity evolve from as simple as necessary." - [http://nshipster.com/nscoding/](http://nshipster.com/nscoding/)
 
 
 #### TO-DO: 
