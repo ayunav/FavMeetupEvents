@@ -12,14 +12,14 @@ class EventsTableViewCell: UITableViewCell {
     
     var event: Event!
     
-    @IBOutlet weak var venueLabel: UILabel!
-    @IBOutlet weak var eventDateLabel: UILabel! // how to make private?
-    @IBOutlet weak var groupNameLabel: UILabel!
-    @IBOutlet weak var eventTimeLabel: UILabel!
-    @IBOutlet weak var rsvpCountLabel: UILabel!
-    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak private var venueLabel: UILabel!
+    @IBOutlet weak private var eventDateLabel: UILabel! 
+    @IBOutlet weak private var groupNameLabel: UILabel!
+    @IBOutlet weak private var eventTimeLabel: UILabel!
+    @IBOutlet weak private var rsvpCountLabel: UILabel!
+    @IBOutlet weak private var eventTitleLabel: UILabel!
     
-    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak private var likeButton: UIButton!
     
     
     override func awakeFromNib() {
