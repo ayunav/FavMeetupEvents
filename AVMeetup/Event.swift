@@ -34,13 +34,13 @@ class Event: NSObject, NSCoding {
         didSet {
             
             if (isLiked) {
-                if (EventsStore.sharedInstance.contains(for: self.eventId) == true) {
-                    EventsStore.sharedInstance.remove(for: self.eventId)
+                if (EventsStore.shared.contains(for: self.eventId) == true) {
+                    EventsStore.shared.remove(for: self.eventId)
                 } else {
-                    EventsStore.sharedInstance.set(value: self, for: self.eventId)
+                    EventsStore.shared.set(value: self, for: self.eventId)
                 }
             } else {
-                EventsStore.sharedInstance.remove(for: self.eventId)
+                EventsStore.shared.remove(for: self.eventId)
             }
         }
     }
@@ -57,7 +57,7 @@ class Event: NSObject, NSCoding {
         self.time    = time
         self.venue   = venue
         
-        self.isLiked = EventsStore.sharedInstance.contains(for: self.eventId)
+        self.isLiked = EventsStore.shared.contains(for: self.eventId)
     }
     
 
@@ -102,12 +102,12 @@ class Event: NSObject, NSCoding {
         
         self.init(
             date   : date,
+            eventId: eventId,
+            group  : group,
             name   : name,
             rsvp   : rsvp,
             time   : time,
-            venue  : venue,
-            group  : group,
-            eventId: eventId
+            venue  : venue
         )
         
         self.isLiked = aDecoder.decodeBool(forKey: "isLiked")

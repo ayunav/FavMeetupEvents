@@ -82,7 +82,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func displayFavoriteEvents() {
         
-        self.events = EventsStore.sharedInstance.getFavoriteEvents()
+        self.events = EventsStore.shared.getFavoriteEvents()
 
         DispatchQueue.main.async {
             self.eventsTableView.reloadData()
