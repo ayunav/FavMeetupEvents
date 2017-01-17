@@ -96,7 +96,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - FavoriteEventsDelegate
     
     func didUnlikeEvent() {
-        displayFavoriteEvents()
+        
+        fetchEvents(sender: segmentedControl)
     }
     
     
