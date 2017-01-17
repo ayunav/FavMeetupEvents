@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteEventsDelegate {
 
     
     // MARK: - Properties 
@@ -26,7 +26,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        EventsStore.shared.delegate = self 
+        
         setupTableView()
         fetchEvents(sender: segmentedControl)
     }
@@ -35,6 +37,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func setupTableView() {
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
+        
         eventsTableView.register(UINib(nibName: "EventsTableViewCell", bundle: nil), forCellReuseIdentifier: CellIdentifier)
         
         eventsTableView.rowHeight = UITableViewAutomaticDimension
@@ -87,6 +90,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         DispatchQueue.main.async {
             self.eventsTableView.reloadData()
         }
+    }
+    
+    
+    // MARK: - FavoriteEventsDelegate
+    
+    func didUnlikeEvent() {
+        displayFavoriteEvents()
     }
     
     

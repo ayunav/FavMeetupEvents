@@ -8,10 +8,16 @@
 
 import Foundation
 
-class EventsStore: NSObject {
+protocol FavoriteEventsDelegate: class {
+    func didUnlikeEvent()
+}
 
+
+class EventsStore: NSObject {
     
     static let shared = EventsStore()
+    
+    weak var delegate: FavoriteEventsDelegate?
     
     
     fileprivate var userDefaults: UserDefaults {
@@ -22,20 +28,20 @@ class EventsStore: NSObject {
     }
     
     
-    func set<V>(value: V, for key: String) where V: NSCoding {
+    func set(value: Event, for key: String) {
         let data = NSKeyedArchiver.archivedData(withRootObject: value)
         self.userDefaults.set(data, forKey: key)
         self.userDefaults.synchronize()
     }
     
     
-    func value<V>(for key: String) -> V? where V: NSCoding {
+    func value(for key: String) -> Event? {
         let data = self.userDefaults.data(forKey: key)
         return data.flatMap {
-            NSKeyedUnarchiver.unarchiveObject(with: $0) as? V
+            NSKeyedUnarchiver.unarchiveObject(with: $0) as? Event
         }
     }
-    
+
     
     func contains(for key: String) -> Bool {
         return self.userDefaults.object(forKey: key) != nil

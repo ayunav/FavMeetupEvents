@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 enum EventFields: String {
 
     case eventId      = "id"
@@ -32,7 +33,6 @@ class Event: NSObject, NSCoding {
     
     var isLiked  : Bool = false {
         didSet {
-            
             if (isLiked) {
                 if (EventsStore.shared.contains(for: self.eventId) == true) {
                     EventsStore.shared.remove(for: self.eventId)
@@ -41,10 +41,10 @@ class Event: NSObject, NSCoding {
                 }
             } else {
                 EventsStore.shared.remove(for: self.eventId)
+                EventsStore.shared.delegate?.didUnlikeEvent()
             }
         }
     }
-
     
     
     init(date: String, eventId: String, group: String, name: String, rsvp: String, time: String, venue: String) {
