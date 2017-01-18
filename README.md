@@ -1,12 +1,17 @@
 # AVMeetup
 
+## Demo 
+
+![Demo](https://github.com/ayunav/AVMeetup/blob/master/AVMeetupAppDemo.gif)
+
+
 ## How to run 
 
 1. Download the source file 
 2. Open AVMeetup.xcworkspace project 
 3. Build and run 
 
-Normally, the API keys should not be exposed. I usually have the Constants file in the .gitignore file, but I readded it, so you won't have to do it manually. 
+Normally, the API keys should not be exposed. 😱 I usually have the `Constants` file in the `.gitignore` file, but (just for this project) I readded it, so you won't have to do it manually. 
 
 ## Architecture & Features 
 
@@ -24,14 +29,9 @@ Normally, the API keys should not be exposed. I usually have the Constants file 
 
 - MVC
 - Alamofire library to make networking requests code more succinct 
-- NSCoding/NSKeyedArchiver to persist data for favorite events. EventsStore class manages saving favorite Event objects as a dictionary to User Defaults, where a key is an eventID string, and a value is an Event object. 
+- `NSCoding/NSKeyedArchiver` to persist data for favorite events. `EventsStore` class manages saving favorite `Event` objects as a dictionary to `User Defaults`, where the key is an `eventID` `String`, and the value is an `Event` object. 
 
-I was debating whether I should be "adding complexity" (to reduce complexity, as Mike Walker said at the last iOSoho meetup at Meetup) to this rather small app. Some features that could be more "complex" in order to accommodate the future app expansion:   
-- tableview's datasource could be its own class 
-- EventsStore methods could be generic
-- Core Data could be used to store favorite events 
-
-but I would agree with Mattt Thompson, NSHipster contributor: "As developers, it is our responsibility to understand the goals and needs of our applications, and to resist the urge to over-engineer and prematurely optimize our solutions. There is wisdom to letting complexity evolve from as simple as necessary." - [http://nshipster.com/nscoding/](http://nshipster.com/nscoding/)
+I was debating whether I should be adding complexity ("to reduce complexity", as Mike Walker said at the last [iOSoho meetup at Meetup](https://www.meetup.com/iOSoho/events/232889014/)) to this rather small app. If the app was larger, I would separate the `tableview`'s datasource into its own class, some methods could be generic like `EventsStore` class methods, and I would use `Core Data` to persist data across launches. However, I would agree with [Mattt Thompson](http://nshipster.com/authors/mattt-thompson/), [NSHipster](http://nshipster.com) contributor: "As developers, it is our responsibility to understand the goals and needs of our applications, and to resist the urge to over-engineer and prematurely optimize our solutions. There is wisdom to letting complexity evolve from as simple as necessary." - [source](http://nshipster.com/nscoding/)
 
 
 #### TO-DO: 
@@ -56,14 +56,11 @@ but I would agree with Mattt Thompson, NSHipster contributor: "As developers, it
 
 - Like icon credits - [icons8](https://icons8.com/web-app/87/Like)
 - [Alamofire](https://github.com/Alamofire/Alamofire) networking library
-- [NSCoding](http://nshipster.com/nscoding/)
+- [NSHipster: NSCoding](http://nshipster.com/nscoding/)
 - [UserDefaults and complex objects](https://www.codementor.io/brettr/tutorials/persisting-data-with-nsuserdefaults-and-complex-objects-du107m6ja)
 - [UserDefaultsManager example](https://github.com/imk2o/UICatalog/blob/f040bd07a7de4a4b8df784c0c4444436b04ed813/UICatalog/Misc/UserDefaultsManager.swift)
 - [Private IBOutlets](https://www.natashatherobot.com/swift-iboutlets-private/)
 
-## Demo 
-
-![Demo](https://github.com/ayunav/AVMeetup/blob/master/AVMeetupAppDemo.gif)
 
 #### Screenshots 
 
