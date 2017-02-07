@@ -9,9 +9,15 @@
 
 1. Download the source file 
 2. Open AVMeetup.xcworkspace project 
-3. Build and run 
+3. You will see an error message and the missing `Constants.swift` file in the Project Navigator in the Constants folder.
+4. Create new file (cmd + N), name it `Constants`, and add to the project.
+5. Copy-paste the code below and insert your own [Meetup API key](http://www.meetup.com/meetup_api/key/):
 
-Normally, the API keys should not be exposed. 😱 I usually have the `Constants` file in the `.gitignore` file, but (just for this project) I readded it, so you won't have to do it manually. 
+`import Foundation
+
+let MeetupApiKey = "INSERT YOUR API KEY HERE"`
+
+Build and run 
 
 ## Architecture & Features 
 
