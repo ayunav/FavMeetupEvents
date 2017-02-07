@@ -1,4 +1,4 @@
-# AVMeetup
+# Fav Meetup Events - Meetup Clone App
 
 ## Demo 
 
