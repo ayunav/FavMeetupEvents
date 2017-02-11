@@ -54,8 +54,8 @@ I was debating whether I should be adding complexity ("to reduce complexity", as
 
 #### Screenshots 
 
-![All Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/All_Events_Screenshot.png)
-![Favorite Events](https://github.com/ayunav/AVMeetup/blob/master/Screenshots/Favorite_Events_Screenshot.png)
+<img src="https://github.com/ayunav/AVMeetup/blob/master/Screenshots/All_Events_Screenshot.png" width="45%" height="45%"> 
+<img src="https://github.com/ayunav/AVMeetup/blob/master/Screenshots/Favorite_Events_Screenshot.png" width="45%" height="45%"> 
 
 
 #### TO-DO: 
